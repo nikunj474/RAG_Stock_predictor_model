@@ -1,4 +1,8 @@
-# yfinance
+Use the App Demo right here:
+
+https://rag-stock-predictor-model.vercel.app/
+
+This is an application to get all the news of tne S&P 500 Stocks for a set 10 year time period using RAG search models. It would give all the news from the 
 
 Data has been uploaded to an AWS RDS instance. All data files are stored locally due to size constraints
 
