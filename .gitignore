@@ -1,0 +1,19 @@
+# Ignore system files
+.DS_Store
+
+# Ignore environment files
+.env
+pg_env
+
+# Ignore log files
+*.log
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore the entire Data folder
+Data/
+
+# Ignore other generated or unnecessary files
+*.pyc
+__pycache__/
