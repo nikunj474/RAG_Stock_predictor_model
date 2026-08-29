@@ -122,13 +122,3 @@ without downloading anything.
 | `cuda_test.py` | GPU availability check |
 
 ---
-
-## Notes
-
-Built as a graduate team project. My work was the embedding pipeline and the
-vector store: the batched GPU run, the Postgres and pgvector schema, the load
-and validation path, and the HNSW index tuning.
-
-## Licence
-
-MIT. See [LICENSE](LICENSE).
