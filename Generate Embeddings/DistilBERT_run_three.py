@@ -8,8 +8,10 @@ from tqdm import tqdm
 import gc
 import os
 
+import config
+
 # Load your data
-file_path = '/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_v3_cleaned.csv'
+file_path = config.news("News_Category_Dataset_v3_cleaned.csv")
 df = pd.read_csv(file_path)
 descriptions = [str(text) for text in df['short_description'].tolist()]
 
@@ -25,8 +27,8 @@ model = model.to(device)
 print(f"Using device: {device}")
 
 # Output file paths
-output_path = '/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings2.parquet'
-failed_output_path = '/Users/nsusser/Desktop/Github/yfinance/Data/failed_batches.parquet'
+output_path = config.news("News_Category_Dataset_with_embeddings2.parquet")
+failed_output_path = str(config.DATA_DIR / "failed_batches.parquet")
 
 # Initialize a list to track failed batches and their data
 failed_batches = []

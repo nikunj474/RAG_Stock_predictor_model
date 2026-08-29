@@ -17,3 +17,10 @@ Data/
 # Ignore other generated or unnecessary files
 *.pyc
 __pycache__/
+
+# Bulk data: fetched or generated, not committed. Samples live in data/samples/.
+/data/
+!/data/samples/
+ticker_data.csv
+processed_data.csv
+*.parquet

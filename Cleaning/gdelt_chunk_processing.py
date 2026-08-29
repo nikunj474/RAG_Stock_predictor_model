@@ -2,7 +2,9 @@ import pandas as pd
 import os
 import re
 
-os.chdir('/Users/nsusser/Desktop/Github/yfinance/')
+import config
+
+os.chdir(str(config.DATA_DIR))
 
 # Define the chunk size (number of rows per chunk)
 chunksize = 1000  # Adjust based on memory availability

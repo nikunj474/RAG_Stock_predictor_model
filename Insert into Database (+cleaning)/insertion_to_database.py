@@ -1,6 +1,8 @@
 import pandas as pd
 import psycopg2
 import os
+
+import config
 # Database connection parameters
 DB_NAME = os.getenv("DB_NAME")  
 DB_USER = os.getenv("DB_USER")
@@ -9,7 +11,7 @@ DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
 
 # File path for your Parquet file
-PARQUET_FILE_PATH = "/Users/nsusser/Desktop/Github/yfinance/Data/news/News_embeddings_with_headlines2_final.parquet"
+PARQUET_FILE_PATH = config.news("News_embeddings_with_headlines2_final.parquet")
 
 # Connect to PostgreSQL database
 def connect_to_db():

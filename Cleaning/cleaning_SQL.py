@@ -3,7 +3,9 @@ import os
 import re
 import requests
 
-os.chdir('/Users/nsusser/Desktop/Github/yfinance/Data/news/')
+import config
+
+os.chdir(config.news(""))
 
 
 # Step 1: Load the CSV file into a DataFrame

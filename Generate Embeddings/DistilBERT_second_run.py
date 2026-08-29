@@ -4,8 +4,10 @@ from transformers import DistilBertModel, DistilBertTokenizer
 import numpy as np
 from tqdm import tqdm
 
+import config
+
 # Load your data
-file_path = '/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_v3_cleaned.csv'
+file_path = config.news("News_Category_Dataset_v3_cleaned.csv")
 df = pd.read_csv(file_path)
 descriptions = df['short_description'].tolist()
 
@@ -27,7 +29,7 @@ print(f"Using device: {device}")
 failed_batches = []
 
 # Define output path and set `write_header` to True for the first write
-output_path = '/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings.csv'
+output_path = config.news("News_Category_Dataset_with_embeddings.csv")
 write_header = True
 
 # Process the descriptions in batches

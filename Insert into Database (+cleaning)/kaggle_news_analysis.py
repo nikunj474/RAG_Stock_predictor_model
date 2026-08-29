@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 
+import config
+
 # Load the CSV data
-file_path = "/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings2.csv"
+file_path = config.news("News_Category_Dataset_with_embeddings2.csv")
 
 df = pd.read_csv(file_path)
 

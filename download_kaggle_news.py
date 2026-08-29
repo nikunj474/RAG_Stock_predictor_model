@@ -2,12 +2,14 @@ import kagglehub
 import shutil
 import os
 
+import config
+
 # Download latest version
 path = kagglehub.dataset_download("rmisra/news-category-dataset")
 
 print("Path to dataset files:", path)
 # Define the destination folder
-destination_folder = "/Users/nsusser/Desktop/Github/yfinance/Data/news"
+destination_folder = str(config.NEWS_DIR)
 
 # Ensure the destination folder exists
 os.makedirs(destination_folder, exist_ok=True)

@@ -2,7 +2,9 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-CSV_FILE_PATH = "/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings2.csv"
+import config
+
+CSV_FILE_PATH = config.news("News_Category_Dataset_with_embeddings2.csv")
 df = pd.read_csv(CSV_FILE_PATH)
 
 df = df.drop(columns=['authors'])
@@ -20,7 +22,7 @@ print(df.head())
 print("Data Types of Columns:")
 print(df.dtypes)
 
-parquet_path = "/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings_final.parquet"
+parquet_path = config.news("News_Category_Dataset_with_embeddings_final.parquet")
 table = pa.Table.from_pandas(df)  # Convert DataFrame to Arrow Table
 pq.write_table(table, parquet_path)
 

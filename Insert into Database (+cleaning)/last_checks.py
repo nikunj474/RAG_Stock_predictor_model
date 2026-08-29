@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 
+import config
+
 # Load the Parquet file
-parquet_path = "/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings_final.parquet"
+parquet_path = config.news("News_Category_Dataset_with_embeddings_final.parquet")
 df = pd.read_parquet(parquet_path)
 
 # Validate embeddings

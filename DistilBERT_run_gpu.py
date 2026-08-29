@@ -8,8 +8,10 @@ from tqdm import tqdm
 import gc
 import os
 
+import config
+
 # Load your data
-file_path = r'C:\Users\Sebastian\Desktop\Nathan Code\News_Category_Dataset_v3_cleaned.csv'
+file_path = config.news("News_Category_Dataset_v3_cleaned.csv")
 df = pd.read_csv(file_path)
 df['combined_text'] = df['headline'] + " " + df['short_description']
 descriptions = [str(text) for text in df['combined_text'].tolist()]
@@ -28,8 +30,8 @@ model = model.to(device)
 print(f"Using device: {device}")
 
 # Output file paths
-output_path = r'C:\Users\Sebastian\Desktop\Nathan Code\News_embeddings_with_headlines.parquet'
-failed_output_path = r'C:\Users\Sebastian\Desktop\Nathan Code\failed_batches.parquet'
+output_path = config.news("News_embeddings_with_headlines.parquet")
+failed_output_path = config.news("failed_batches.parquet")
 
 # Initialize a list to track failed batches and their data
 failed_batches = []

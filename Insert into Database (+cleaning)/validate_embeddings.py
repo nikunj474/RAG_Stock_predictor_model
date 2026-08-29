@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
 
-CSV_FILE_PATH = "/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings_final.csv"
+import config
+
+CSV_FILE_PATH = config.news("News_Category_Dataset_with_embeddings_final.csv")
 df = pd.read_csv(CSV_FILE_PATH)
 
 # Check the data type of each embedding in the column

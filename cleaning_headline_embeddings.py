@@ -3,8 +3,10 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import numpy as np
 
+import config
+
 # Load the Parquet file
-parquet_path = "/Users/nsusser/Desktop/Github/yfinance/Data/news/News_embeddings_with_headlines2.parquet"
+parquet_path = config.news("News_embeddings_with_headlines2.parquet")
 df = pd.read_parquet(parquet_path)
 
 # Check the structure of the DataFrame
@@ -55,7 +57,7 @@ for column in df.columns:
     print(f"{column}: {type(first_element)}")
 
 # Save the transformed DataFrame to a new Parquet file
-final_parquet_path = "/Users/nsusser/Desktop/Github/yfinance/Data/news/News_embeddings_with_headlines2_final.parquet"
+final_parquet_path = config.news("News_embeddings_with_headlines2_final.parquet")
 table = pa.Table.from_pandas(df)  # Convert DataFrame to Arrow Table
 pq.write_table(table, final_parquet_path)
 

@@ -3,7 +3,9 @@ import os
 import re
 import requests
 
-os.chdir('/Users/nsusser/Desktop/Github/yfinance/Data/helpful/')
+import config
+
+os.chdir(str(config.DATA_DIR / "helpful"))
 
 #check memory usage
 '''

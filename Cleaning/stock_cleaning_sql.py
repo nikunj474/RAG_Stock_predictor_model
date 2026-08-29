@@ -1,7 +1,9 @@
 import pandas as pd
 import os
 
-os.chdir('/Users/nsusser/Desktop/Github/yfinance/Data/stocks/')
+import config
+
+os.chdir(config.stocks(""))
 
 
 # Step 1: Load the CSV file into a DataFrame

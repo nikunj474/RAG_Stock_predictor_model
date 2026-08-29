@@ -3,6 +3,8 @@ import torch
 from transformers import DistilBertModel, DistilBertTokenizer
 import numpy as np
 
+import config
+
 # Load your data
 file_path = '/path/to/your/News_Category_Dataset_v3.json'
 df = pd.read_json(file_path, lines=True)
@@ -51,7 +53,7 @@ from transformers import DistilBertModel, DistilBertTokenizer
 import numpy as np
 
 # Load your data
-file_path = '/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_v3_cleaned.csv'
+file_path = config.news("News_Category_Dataset_v3_cleaned.csv")
 df = pd.read_csv(file_path)
 descriptions = df['short_description'].tolist()
 
@@ -83,7 +85,7 @@ df_subset = df.head(batch_size).copy()
 df_subset['embedding'] = list(all_embeddings_np)
 
 # Save the subset to CSV
-output_path = '/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings_sample.csv'
+output_path = config.news("News_Category_Dataset_with_embeddings_sample.csv")
 df_subset.to_csv(output_path, index=False)
 print(f"Sample embeddings saved to '{output_path}'")
 '''
@@ -142,7 +144,7 @@ import numpy as np
 from tqdm import tqdm
 
 # Load your data
-file_path = '/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_v3_cleaned.csv'
+file_path = config.news("News_Category_Dataset_v3_cleaned.csv")
 df = pd.read_csv(file_path)
 descriptions = df['short_description'].tolist()
 
@@ -192,7 +194,7 @@ all_embeddings_np = np.array(all_embeddings)
 df['embedding'] = list(all_embeddings_np)
 
 # Save the full DataFrame with embeddings to a CSV file
-output_path = '/Users/nsusser/Desktop/Github/yfinance/Data/news/News_Category_Dataset_with_embeddings.csv'
+output_path = config.news("News_Category_Dataset_with_embeddings.csv")
 df.to_csv(output_path, index=False)
 print(f"Embeddings saved to '{output_path}'")
 
